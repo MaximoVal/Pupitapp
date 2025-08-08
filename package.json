@@ -1,0 +1,36 @@
+{
+  "name": "pagina",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-builder",
+    "package-win": "electron-builder --win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "35.2.0",
+    "electron-builder": "^24.13.1"
+  },
+  "build": {
+    "appId": "com.pupitapp.app",
+    "productName": "Pupitapp",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "icon": "iconoPupita.ico", 
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

@@ -1,0 +1,186 @@
+/*----------Atributos generales------------------------------------------------------------*/
+.eleccion
+{
+    font-size: 40px;
+    color: aliceblue;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+button
+{
+    height: 50px;
+    width: 100px;
+    background-color: azure;
+    border-radius: 15px;
+    border: 0.5px solid black;
+    box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.5);;
+    position: relative; /* Necesario para asegurar que el background se expanda correctamente */
+    overflow: hidden; /* Asegura que el color de fondo no se desborde */
+    background-size: 0% 100%; /* Comienza con un fondo mínimo */
+    background-position: center; /* Centra el fondo */
+    transition: background-color 0.3s ease, background-size 0.5s ease, transform 0.3s ease;
+    
+}
+
+.botones
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.textoMostrado
+{
+    font-size: 40px; 
+    padding: 20px; 
+
+}
+
+.fondoTexto
+{
+    background-color: rgba(255, 255, 255, 0.4);;
+    width:fit-content ;
+    margin: 10px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+/*----------------------------------------------------------------------*/
+
+/*----------------PAgina Feliz----------------------------------------*/
+.bfeliz
+{
+ background:linear-gradient(to bottom, rgb(245, 225, 45), rgb(248, 250, 156));
+ background-repeat: no-repeat;
+ min-height: 95dvh;
+}
+
+button.feliz:hover
+{
+    background-color: rgb(240, 223, 126);
+    transform: translate(-3px, -3px) scale(1.2);
+    background-size: 100% 100%; /* Expande el fondo al 100% */
+}
+/*----------------------------------------------------------------------*/
+
+/*------------PAgina triste------------------------------*/
+.btriste
+{
+    background:linear-gradient(to bottom, rgb(95, 173, 247), rgb(134, 156, 168));
+    background-repeat: no-repeat;
+    min-height: 95dvh;
+}
+
+button.triste:hover
+{
+    background-color: rgb(25, 132, 219);
+    transform: translate(-3px, -3px) scale(1.2);
+    background-size: 100% 100%;
+}
+/*-----------------------------------------------------------------------------------------*/
+
+/*-----------------Pagina extraña-----------------------------*/
+.bextraña
+{
+    background: linear-gradient(to bottom, rgb(111, 255, 219), rgb(172, 252, 245));
+    background-repeat: no-repeat;
+    min-height: 95dvh;
+}
+
+button.extraña:hover
+{
+    background-color: rgb(0, 228, 171);
+    transform: translate(-3px, -3px) scale(1.2);
+    background-size: 100% 100%;
+}
+/*-----------------------------------------------------------------------------------------------*/
+
+/*----------------PAgina enojada---------------------------------------*/
+.benojada
+{
+    background: linear-gradient(to bottom,rgb(221, 93, 93),rgb(214, 157, 157));
+    background-repeat: no-repeat;
+    min-height: 95dvh;
+}
+
+button.enojada:hover
+{
+    background-color: rgb(211, 79, 79);
+    transform: translate(-3px, -3px) scale(1.2);
+    background-size: 100% 100%;
+}
+/*------------------------------------------------------------------------------------
+
+/*----------------PAgina extra---------------------------------------*/
+.bextra
+{
+    background: linear-gradient(to bottom,rgb(248, 171, 29),rgb(214, 196, 157));
+    background-repeat: no-repeat;
+    min-height: 95dvh;
+}
+.botonExtra
+{
+    height: 150px;
+    width: 200px;
+    margin-left: 50px;
+    font-size: 40px;
+}
+.botonExtra:hover
+{
+    background-color: rgb(211, 158, 79);
+    transform: translate(-3px, -3px) scale(1.2);
+    background-size: 100% 100%;
+}
+/*------------------------------------------------------------------------------------
+/*----------------PAgina notasG---------------------------------------*/
+.bnotasG
+{
+    background: linear-gradient(to bottom,rgb(41, 223, 41),rgb(187, 245, 180));
+    background-repeat: no-repeat;
+    min-height: 95dvh;
+}
+
+button.notasG:hover
+{
+    background-color: rgb(110, 211, 79);
+    transform: translate(-3px, -3px) scale(1.2);
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+/*------------------------------------------------------------------------------------
+
+/*-------------------Boton Volver------------------------------*/
+.volver
+{
+    background-color: blue;
+    color: aliceblue;
+    font-size: 30px;
+    height: 80px;
+    width: 120px;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.volver:hover
+{
+    background-color: chartreuse;
+    color: black;
+    transform: scale(1.2);
+}
+
+/*---------------------------------------------------------------------------------*/
+
+#mensaje
+{
+    font-family: sans-serif;
+    font-size: 30px;
+    color: aliceblue;
+    border: 10px black;
+}
+#textoMostrado
+{
+    padding: 20px;
+}
+.hidden
+{
+    display: none;
+}

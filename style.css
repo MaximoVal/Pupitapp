@@ -1,0 +1,578 @@
+/*------------------------Generales----------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+header
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:linear-gradient(to bottom,aquamarine,aquamarine,rgb(223, 223, 223));
+  height: 100px;
+  width: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  height: clamp(100dvh,120dvh,150dvh);
+  margin: 0;
+  font-family: sans-serif;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.6)), 
+    url("Fondo-Index.png");
+  background-size: cover;
+  background-position: center;
+}
+li
+{
+  list-style-type: none;
+  text-decoration: none;
+}
+/*__________________________________________________________________________________________________________________________________*/
+
+.titulo
+{
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 5px;
+  left: 25%;
+  height: auto;
+  
+}
+.inicio
+{
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: auto auto auto;
+  width: 100%;
+  gap: 30px;
+    
+}
+.intro
+{
+  
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(90deg, #0060a0, #38d3fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+.explicacion
+{
+  font-size: 18px;
+  margin-left: 150px;
+
+}
+
+.boton {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background-color: #00ffaa;
+}
+
+body 
+{
+  margin: 0;
+  padding: 0;
+}
+
+.portada 
+{
+  width: 201.5vh;
+  height: 100vh;
+  background-image: url("Fondo-Inicio.png"); /* o cualquier fondo */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease; /* para el desvanecimiento */
+  
+}
+#entrar
+ {
+  cursor: pointer;
+  color: white;
+  font-size: 80px;
+  transition: color 0.5s ease;
+  
+}
+#entrar:hover
+{
+  color: rgb(238, 159, 238);
+  transition: 0,1s;
+}
+
+.cartas
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  grid-template-rows: repeat(3, 100px); 
+  margin-top:50px ;
+  gap: 20px;
+}
+/*____________________________________________________________________________________________________________*/
+
+
+/*-----------------------------Feliz--------------------------------------------------*/
+.feliz {
+
+  overflow: hidden;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: 180px;
+  width: 300px;
+  max-width: 300px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  font-size: 40px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.3s ease;
+  animation: entradaCartas1 1s ease-out ;
+}
+
+/* Capa de fondo animada desde el centro */
+.feliz::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #fdf7a5;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+.feliz:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.feliz > * {
+  position: relative;
+  z-index: 1;
+}
+/*____________________________________________________________________________________________________*/
+
+
+/*----------------------------------Triste--------------------------------------------------------------*/
+.triste
+{
+  grid-column:3/4 ;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 180px;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  font-size: 40px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.3s ease;
+  animation: entradaCartas2 1s ease-out;
+}
+
+.triste::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgb(130, 161, 228);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+/* Al hacer hover, el círculo se agranda */
+.triste:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Asegura que el contenido quede arriba */
+.triste > * {
+  position: relative;
+  z-index: 1;
+}
+/*___________________________________________________________________________________________________*/
+
+
+/*------------------------------------------Enojada----------------------------------------------------*/
+.enojada
+{
+  grid-column: 1/2;
+  grid-row: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 180px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  font-size: 40px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.3s ease;
+  animation: entradaCartas1 1.5s ease-out ;
+}
+  
+  /* Capa de fondo animada desde el centro */
+  .enojada::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgb(236, 143, 143);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease;
+    z-index: 0;
+  }
+.enojada:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.enojada > * {
+  position: relative;
+  z-index: 1;
+}
+/*_______________________________________________________________________________________________________________*/
+
+
+/*------------------------------------------Extraña----------------------------------------------------*/
+.extraña
+{
+  grid-column: 3/4;
+  grid-row: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 180px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  font-size: 40px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.3s ease;
+  animation: entradaCartas2 1.5s ease-out;
+}
+/* Capa de fondo animada desde el centro */
+.extraña::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgb(112, 247, 218);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+  
+  /* Al hacer hover, el círculo se agranda */
+.extraña:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+  
+  /* Asegura que el contenido quede arriba */
+.extraña > * {
+  position: relative;
+  z-index: 1;
+}
+/*_______________________________________________________________________________________________________________*/
+
+
+/*_____________________________________________________Extra__________________________________________________________*/
+.extra
+{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 180px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  margin: 20px auto;
+  overflow: hidden;
+  font-size: 40px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.3s ease;
+  animation: entradasCarta3 1s ease-out;
+}
+  
+  /* Capa de fondo animada desde el centro */
+.extra::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgb(248, 201, 99);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+/* Al hacer hover, el círculo se agranda */
+.extra:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Asegura que el contenido quede arriba */
+.extra > * {
+  position: relative;
+  z-index: 1;
+}
+/*_______________________________________________________________________________________________________________*/
+
+/*_______________________________________________Notas Guardadas____________________________________________________________*/
+.nota
+{
+  grid-column: 2/3;
+  grid-row: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  margin: 100px auto;
+  overflow: hidden;
+  font-size: 30px;
+  text-wrap: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.3s ease;
+  animation: entradasCarta3 1s ease-out;
+}
+  
+  /* Capa de fondo animada desde el centro */
+.nota::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgb(12, 187, 50);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+/* Al hacer hover, el círculo se agranda */
+.nota:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Asegura que el contenido quede arriba */
+.nota > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*_______________________________________________Cartas General________________________________________________________________*/
+.carta.expandir {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+  
+  /* Animación para levantar las cartas al hacer hover */
+.cartas .carta {
+  transform: translateY(0); /* Inicialmente no están levantadas */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cartas .carta:hover {
+  transform: translateY(-5px); /* Levanta la carta */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Agrega sombra al levantar */
+}
+
+/* Para la animación de expansión al hacer clic */
+.cartas .expandir {
+  transform: scale(1.1) translateY(-5px); /* Añadimos translateY para mantener el levantamiento */
+  transition: transform 0.3s ease; /* Aseguramos que la transición sea fluida */
+}
+/*_______________________________________________________________________________________________________________*/
+/*_______________________________ANimacion entrada________________________________________*/
+#animacion
+{
+  display: none;
+  position: absolute;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  animation: salida 0.5s ease 0.3s forwards;
+}
+#animacionIndex
+{
+  display: none;
+  position: absolute;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  
+}
+.animacionEntrada
+{
+  animation: entrada 0.2s ease forwards;
+}
+
+@keyframes entrada {
+  0%
+  {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+  
+}
+@keyframes salida {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes entradaCartas1 {
+    from
+    {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+    to
+    {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes entradaCartas2 {
+    from
+    {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+    to
+    {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes entradasCarta3 {
+  from {
+    transform: scale(7) translateY(-200px);
+  }
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+/*_______________________________________________________________________________________________________________*/
+/*_______________________________________________Notas________________________________________________________*/
+.asideNotas
+{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: end;
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  background-color: rgb(118, 243, 69);
+  padding: 15px;
+  border: solid 2px white;
+  transition: transform 0.45s ease;
+  max-width: 250px;
+}
+.mensajes{
+  border-radius: 50%;
+}
+.mensajes:hover
+{
+  transform: scale(1.2);
+}
+#contenedorNotas
+{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  display: none;
+}
+.notas p{
+  margin-top: 10px;
+  padding: 15px;
+  color: black;
+  background-color: #d0edfc;
+  border-radius: 20px;
+}
+details:hover{
+  color:aqua;
+  cursor: pointer;
+}
+details:open{
+  color:black;
+  cursor: pointer;
+}
+#salir:hover
+{
+  color: #ff8383;
+  cursor: pointer;
+}
+.botonGuardar{
+  margin-top: 10px;
+  height: 40px;
+}
+.botonGuardar:hover{
+  background-color: #00ffaa;
+  
+}

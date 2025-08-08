@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pupitapp</title>
+    <script src="java.js" defer></script>
+    <script src="notas.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="iconoPupita.ico">
+    <link rel="stylesheet" href="cartas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+      .expandida {
+        transform: scale(1.1) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .cartas > div {
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body >
+  <main id="animacion">
+    <div class="pantala"></div>
+  </main>
+  <section class="inicio">
+    <h2 class="intro">Hola amorcito, como estas? Hice esta mini aplicacion para que puedas sentirme cerquita cuando no lo esté.</h2>
+    <h3 class="explicacion">Te hice una especie de cartitas para que puedas leerlas dependiendo tu estado de animmo, no son en papel porque tenes un novio re genio que programa y puede hacer estas cosas.</h3>
+    <h3 class="explicacion">Vos solo tenes que clickear en la que vos quieras y va a aparecer una sorpresa</h3>
+  </section>
+  <section class="cartas">
+    <div class="carta feliz"><b><p>Feliz</p></b></div>
+    <div class="carta triste"><b><p>Triste</p></b></div>
+    <div class="carta enojada"><b><p>Enojada</p></b></div>
+    <div class="carta extraña"><b><p>Me extrañas</p></b></div>
+    <div class="carta extra"><b><p>Extra</p></b></div>
+    <div class="carta nota"><b><p>Notas Guardadas</p></b></div>
+  </section>
+  <aside class="asideNotas mensajes" id="aside">
+    <img src="notas.png" alt="" class="hidden" id="leidos">
+    <img src="notaSInLeer.png" alt="" id="sinLeer">
+    <div class="divNotas hidden" id="contenedorNotas"></div>
+    <span id="salir">Salir</span>
+   
+  </aside>
+</body>
+</html> 
