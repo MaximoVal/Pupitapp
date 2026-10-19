@@ -51,7 +51,7 @@ fun SetupScreen(
     viewModel: NotesViewModel,
     onConnected: () -> Unit
 ) {
-    var secretCodeInput by remember { mutableStateOf("") }
+    var secretCodeInput by remember { mutableStateOf("pupitos") }
     var inputError by remember { mutableStateOf<String?>(null) }
 
     // Lanzador para solicitar permiso de notificaciones en Android 13+ (API 33+)
@@ -59,20 +59,21 @@ fun SetupScreen(
         contract = ActivityResultContracts.RequestPermission()
     ) { _ ->
         // Proceder con la conexión independientemente del resultado del diálogo del sistema
-        viewModel.connect(secretCodeInput) {
+        viewModel.connect(secretCodeInput.trim().lowercase()) {
             onConnected()
         }
     }
 
     val onConnectClicked = {
-        if (secretCodeInput.trim().isBlank()) {
-            inputError = "Por favor escribe el código secreto que compartirás con tu pareja"
+        val trimmed = secretCodeInput.trim()
+        if (trimmed.lowercase() != "pupitos") {
+            inputError = "La contraseña debe ser 'pupitos'"
         } else {
             inputError = null
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             } else {
-                viewModel.connect(secretCodeInput) {
+                viewModel.connect(trimmed.lowercase()) {
                     onConnected()
                 }
             }
@@ -147,8 +148,8 @@ fun SetupScreen(
                     },
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(16.dp),
-                    label = { Text("Código secreto de pareja") },
-                    placeholder = { Text("ej. nuestro-aniversario-2026") },
+                    label = { Text("Contraseña de pareja") },
+                    placeholder = { Text("pupitos") },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Lock,
