@@ -47,7 +47,7 @@ class NotificationActionReceiver : BroadcastReceiver() {
                             // Actualizar la notificación informando del envío exitoso
                             val repliedNotification = NotificationCompat.Builder(context, NotificationHelper.CHANNEL_NOTES)
                                 .setSmallIcon(android.R.drawable.ic_dialog_email)
-                                .setContentTitle("Notas para mi bebe")
+                                .setContentTitle("PupIA")
                                 .setContentText("Respuesta enviada: \"$replyText\" ❤️")
                                 .setPriority(NotificationCompat.PRIORITY_LOW)
                                 .setAutoCancel(true)

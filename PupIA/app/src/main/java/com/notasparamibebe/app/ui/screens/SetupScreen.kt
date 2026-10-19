@@ -112,7 +112,7 @@ fun SetupScreen(
                 Spacer(modifier = Modifier.height(20.dp))
 
                 Text(
-                    text = "Notas para mi bebe",
+                    text = "PupIA",
                     style = MaterialTheme.typography.headlineSmall.copy(
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary

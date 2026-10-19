@@ -70,7 +70,7 @@ object NotificationHelper {
         )
 
         return NotificationCompat.Builder(context, CHANNEL_LIVE_CONNECTION)
-            .setContentTitle("Notas para mi bebe")
+            .setContentTitle("PupIA")
             .setContentText("Conectado en vivo con tu bebé 💞")
             .setSmallIcon(android.R.drawable.ic_menu_send)
             .setOngoing(true)
