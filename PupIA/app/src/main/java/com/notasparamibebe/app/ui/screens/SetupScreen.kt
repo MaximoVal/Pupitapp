@@ -100,21 +100,14 @@ fun SetupScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                // Icono central romántico
-                Box(
+                // Icono central romántico con el logo oficial
+                androidx.compose.foundation.Image(
+                    painter = androidx.compose.ui.res.painterResource(id = com.notasparamibebe.app.R.drawable.app_logo),
+                    contentDescription = "Logo",
                     modifier = Modifier
-                        .size(80.dp)
-                        .clip(CircleShape)
-                        .background(SoftPink),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Favorite,
-                        contentDescription = "Corazón",
-                        tint = RoseFavorite,
-                        modifier = Modifier.size(44.dp)
-                    )
-                }
+                        .height(64.dp)
+                        .padding(horizontal = 8.dp)
+                )
 
                 Spacer(modifier = Modifier.height(20.dp))
 
